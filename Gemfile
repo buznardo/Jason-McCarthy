@@ -36,3 +36,6 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
+
+gem 'paperclip', :git => 'git://github.com/thoughtbot/paperclip.git',
+                 :branch => 'rails3'

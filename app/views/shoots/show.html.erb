@@ -1,10 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 <div class="container">
-<p>
-  <%= @shoot.title %>
-</p>
+	<%= @shoot.title %>
+	<%= image_tag @shoot.thumb.url %>
 
-
-<%= link_to 'Edit', edit_shoot_path(@shoot) %>
+	<%= link_to 'Edit', edit_shoot_path(@shoot) %>
 </div>

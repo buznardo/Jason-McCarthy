@@ -1,7 +1,7 @@
 class ShootsController < ApplicationController
 
   def index
-    @shoots = Shoot.all
+    @shoots = Shoot.all(:order => "created_at DESC")
 
     respond_to do |format|
       format.html # index.html.erb
