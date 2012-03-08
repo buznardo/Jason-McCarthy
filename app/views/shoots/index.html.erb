@@ -1,0 +1,11 @@
+<div class="container">
+
+<% @shoots.each do |shoot| %>
+	<%= shoot.title %>
+	<%= link_to 'View', shoot, :class => "btn btn-small btn-primary" %>
+	<%= link_to 'Edit', edit_shoot_path(shoot), :class => "btn btn-small btn-primary" %>
+	<%= link_to 'X', shoot, confirm: 'Are you sure?', method: :delete, :class => "btn btn-small btn-primary" %>
+<% end %>
+
+<%= link_to 'New Shoot', new_shoot_path, :class => "btn btn-large btn-primary" %>
+</div>

@@ -19,6 +19,8 @@ a, a:visited { color: $black; }
 img { width:100%; }
 .content img { margin-bottom:10px; }
 
+:focus { outline:0; }
+
 
 // typography
 
@@ -74,6 +76,20 @@ header {
 }
 
 
+// landing
+
+#tagline {
+	position:fixed;
+	bottom:25px;
+	left:45px;
+	font-family:"HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	font-weight:300;
+	font-size:3em;
+	color:#fff;
+	opacity:0.4;
+}
+
+
 // thumbs
 
 .thumbs {
@@ -90,6 +106,43 @@ header {
 			cursor:pointer;
 		}
 	}
+}
+
+
+// forms
+
+.field {
+	margin-bottom:10px;
+}
+input {
+	border:1px solid $gray;
+	padding:10px;
+	&:focus {
+		border-color:$black;
+	}
+}
+
+
+// buttons
+
+.btn {
+	font-weight:normal;
+}
+
+.btn-small {
+	font-size:11px;
+	padding:5px 10px;
+}
+
+.btn-large {
+	font-size:12px;
+	padding:10px 20px;
+}
+
+.btn-primary, .btn-primary:visited {
+	background-color:$black;
+	border:0;
+	color:#fff;
 }
 
 

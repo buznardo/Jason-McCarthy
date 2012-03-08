@@ -1,5 +1,7 @@
 Jason::Application.routes.draw do
   
+  resources :shoots
+
   match '/info',   :to => 'pages#info'
   
   root :to => 'pages#home'
