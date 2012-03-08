@@ -1,0 +1,162 @@
+// variables
+
+$black: #000;
+$gray: #aaa;
+$light: #eaeaea;
+
+
+// universal
+
+* { margin:0; padding:0; }
+html,body,input,textarea,button { font-family:"Helvetica Neue",helvetica,arial,sans-serif; color:$black;  }
+
+.container { padding:85px 2% 0 2%; }
+.content { max-width:550px; width:96%; float:left; margin:0 2%; }
+aside { max-width:300px; width:26%; float:left; }
+
+a, a:visited { color: $black; }
+
+img { width:100%; }
+.content img { margin-bottom:10px; }
+
+
+// typography
+
+span { display:block; line-height:1.7em; }
+h1,h2,h3,h4,h5,h6 { line-height:1; }
+h1 { font-size:0.9em; text-transform:uppercase; margin-bottom:10px; }
+h2,h3 {}
+h4 {}
+
+p { font-size:0.9em; color:$gray; line-height:1.7em; margin-bottom:10px; }
+aside p { color:$black; }
+
+time { color:$gray; line-height:1.7em; text-transform:uppercase; }
+
+
+// header
+
+header {
+	position:fixed;
+	background-color:#fff;
+	width:100%;
+	padding:20px 4%;
+	border-bottom:1px solid $light;
+	overflow:hidden;
+	margin-bottom:30px;
+	.logo {
+		font-size:1em;
+		float:left;
+		padding-right:20px;
+		margin-right:20px;
+		border-right:1px solid $black;
+		font-weight:bold;
+		letter-spacing:-1px;
+	}
+	nav {
+		float:left;
+	}
+	li {
+		float:left;
+		margin-right:15px;
+		line-height:1;
+		a, a:visited {
+		font-family:"HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+		font-weight:300;
+		font-size:1em;
+		text-transform:uppercase;
+		color:$gray;
+		&:hover {
+			color:$black;
+		}
+	}
+	}
+}
+
+
+// thumbs
+
+.thumbs {
+	overflow:auto;
+	li {
+	width:46%;
+	float:left;
+	margin:0 2% 4% 2%;
+	overflow:hidden;
+	}
+	img {
+		&:hover {
+			opacity:0.75;
+			cursor:pointer;
+		}
+	}
+}
+
+
+// responsive
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen
+and (min-width : 550px)
+and (max-width : 1024px) {
+	header {
+		padding:20px 3%;
+	}
+	.thumbs li {
+		width:31.25%;
+		margin:0 1% 2% 1%;
+	}
+}
+
+@media only screen
+and (min-width : 1024px)
+and (max-width : 1400px) {
+	header {
+		padding:20px 3%;
+	}
+	.thumbs li {
+		width:23%;
+		margin:0 1% 2% 1%;
+	}
+}
+
+/* Desktops and laptops ----------- */
+@media only screen
+and (min-width : 1400px) {
+	.container {
+		padding:85px 1% 0 1%;
+	}
+	header {
+		padding:20px 1.5%;
+	}
+	.thumbs li {
+		width:19%;
+		margin:0 0.5% 1% 0.5%;
+	}
+}
+
+@media only screen
+and (min-width : 2100px) {
+	.container {
+		padding:85px 1% 0 1%;
+	}
+	header {
+		padding-left:1.5%;
+	}
+	.thumbs li {
+		width:11.5%;
+		margin:0 0.5% 1% 0.5%;
+	}
+	.content {
+		max-width:550px;
+		width:70%; float:left;
+		margin:0 4% 0 0.5%;
+	}
+}
+
+/* iPhone 4 ----------- */
+@media
+only screen and (-webkit-min-device-pixel-ratio : 1.5),
+only screen and (min-device-pixel-ratio : 1.5) {
+
+}
