@@ -4,8 +4,7 @@
 	<% @shoots.each do |shoot| %>
 		<li>
 			<%= shoot.title %>
-			<%= image_tag shoot.thumb.url %>
-			<%= link_to 'View', shoot, :class => "btn btn-small btn-primary" %>
+			<%= link_to image_tag(shoot.thumb.url), shoot %>
 			<%= link_to 'Edit', edit_shoot_path(shoot), :class => "btn btn-small btn-primary" %>
 			<%= link_to 'X', shoot, confirm: 'Are you sure?', method: :delete, :class => "btn btn-small btn-primary" %>
 		</li>

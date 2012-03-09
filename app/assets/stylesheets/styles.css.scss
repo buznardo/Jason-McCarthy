@@ -46,6 +46,7 @@ header {
 	border-bottom:1px solid $light;
 	overflow:hidden;
 	margin-bottom:30px;
+	z-index:9999;
 	.logo {
 		font-size:1em;
 		float:left;
