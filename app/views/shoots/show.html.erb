@@ -1,8 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <div class="container">
-	<%= @shoot.title %>
-	<%= image_tag @shoot.thumb.url %>
+	<h1><%= @shoot.title %></h1>
 
-	<%= link_to 'Edit', edit_shoot_path(@shoot) %>
+	<%= link_to 'Edit', edit_shoot_path(@shoot), :class => "btn btn-small btn-primary" %>
 </div>
