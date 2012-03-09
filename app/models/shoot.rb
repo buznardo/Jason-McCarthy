@@ -11,4 +11,6 @@ class Shoot < ActiveRecord::Base
   validates_attachment_presence :thumb
   validates_attachment_size :thumb, :less_than => 5.megabytes
   validates_attachment_content_type :thumb, :content_type => ['image/jpeg', 'image/png']
+  
+  has_many :photos
 end

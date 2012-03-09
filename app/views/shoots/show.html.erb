@@ -2,6 +2,17 @@
 
 <div class="container">
 	<h1><%= @shoot.title %></h1>
+	
+	<% @shoot.photos.each do |photo| %>
+ 		<%= image_tag @photo.pic.url %>
+	<% end %>
+	
+	<%= form_for([@shoot, @shoot.photos.build], :html => { :multipart => true }) do |f| %>
+  		<div class="field">
+			<%= f.file_field :pic %>
+  		</div>
+    	<%= f.submit :class => "btn btn-large btn-primary" %>
+	<% end %>
 
 	<%= link_to 'Edit', edit_shoot_path(@shoot), :class => "btn btn-small btn-primary" %>
 </div>

@@ -1,6 +1,8 @@
 Jason::Application.routes.draw do
   
-  resources :shoots
+  resources :shoots do
+    resources :photos
+  end
 
   match '/info',   :to => 'pages#info'
   
