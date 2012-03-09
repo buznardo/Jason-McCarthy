@@ -4,12 +4,12 @@
 	<h1><%= @shoot.title %></h1>
 	
 	<% @shoot.photos.each do |photo| %>
- 		<%= image_tag @photo.pic.url %>
+ 		<%= image_tag photo.pic.url %>
 	<% end %>
 	
-	<%= form_for([@shoot, @shoot.photos.build], :html => { :multipart => true }) do |f| %>
+	<%= form_for([@shoot, Photo.new]) do |f| %>
   		<div class="field">
-			<%= f.file_field :pic %>
+			  <%= f.file_field :pic %>
   		</div>
     	<%= f.submit :class => "btn btn-large btn-primary" %>
 	<% end %>
