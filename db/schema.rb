@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120309112249) do
+ActiveRecord::Schema.define(:version => 20120312143902) do
 
   create_table "photos", :force => true do |t|
     t.integer  "shoot_id"
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(:version => 20120309112249) do
     t.string   "thumb_content_type"
     t.integer  "thumb_file_size"
     t.datetime "thumb_updated_at"
+    t.text     "description"
   end
 
 end
