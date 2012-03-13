@@ -1,3 +1,4 @@
+<% @shoot.tags.build %>
 <%= form_for @shoot, :html => { :multipart => true } do |f| %>
   <% if @shoot.errors.any? %>
     <div id="error_explanation">
@@ -17,6 +18,9 @@
   </div>
   <div class="field">
 	<%= f.file_field :thumb %>
+  </div>
+  <div class="field">
+  	<%= f.text_field :tag_names, :placeholder => "Category name", :title => "Type category name" %>
   </div>
   <%= f.submit "Create Shoot", :class => "fl btn btn-large btn-primary" %>
   <%= link_to "cancel", shoots_path %>

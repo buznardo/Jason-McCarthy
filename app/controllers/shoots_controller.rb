@@ -1,30 +1,20 @@
 class ShootsController < ApplicationController
 
   def index
-    @shoots = Shoot.all(:order => "created_at DESC")
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @shoots }
+    if params[:tag_name].present?
+      @tag = Tag.find_by_name(params[:tag_name])
+      @shoots = @tag.shoots.all
+    else
+      @shoots = Shoot.all
     end
   end
 
   def show
     @shoot = Shoot.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @shoot }
-    end
   end
 
   def new
     @shoot = Shoot.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @shoot }
-    end
   end
 
   def edit
@@ -33,30 +23,25 @@ class ShootsController < ApplicationController
 
   def create
     @shoot = Shoot.new(params[:shoot])
-
-    respond_to do |format|
-      if @shoot.save
-        format.html { redirect_to @shoot, notice: 'Shoot was successfully created.' }
-        format.json { render json: @shoot, status: :created, location: @shoot }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @shoot.errors, status: :unprocessable_entity }
-      end
+    
+    if @shoot.save
+      flash[:success] = "Shoot successfully created!"
+      redirect_to @shoot
+    else
+        render 'new'
     end
   end
 
   def update
     @shoot = Shoot.find(params[:id])
 
-    respond_to do |format|
       if @shoot.update_attributes(params[:shoot])
-        format.html { redirect_to @shoot, notice: 'Shoot was successfully updated.' }
-        format.json { head :no_content }
+        flash[:success] = "Shoot successfully updated!"
+        redirect_to @shoot
       else
         format.html { render action: "edit" }
         format.json { render json: @shoot.errors, status: :unprocessable_entity }
       end
-    end
   end
 
   def destroy

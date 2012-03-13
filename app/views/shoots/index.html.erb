@@ -1,14 +1,15 @@
 <div class="container">
+	<ul class="thumbs">
+		<% @shoots.each do |shoot| %>
+			<li>
+				<%= link_to image_tag(shoot.thumb.url), shoot %>
+				<%#= link_to 'Edit', edit_shoot_path(shoot), :class => "btn btn-small btn-primary" %>
+				<%#= link_to 'X', shoot, confirm: 'Are you sure?', method: :delete, :class => "btn btn-small btn-primary" %>
+			</li>
+		<% end %>
+	</ul>
 
-<ul class="thumbs">
-	<% @shoots.each do |shoot| %>
-		<li>
-			<%= link_to image_tag(shoot.thumb.url), shoot %>
-			<%#= link_to 'Edit', edit_shoot_path(shoot), :class => "btn btn-small btn-primary" %>
-			<%#= link_to 'X', shoot, confirm: 'Are you sure?', method: :delete, :class => "btn btn-small btn-primary" %>
-		</li>
-	<% end %>
-</ul>
-
-<%= link_to 'New Shoot', new_shoot_path, :class => "btn btn-large btn-primary" %>
+	<div class="content">
+		<%= link_to 'New Shoot', new_shoot_path, :class => "btn btn-large btn-primary" %>
+	</div>
 </div>
