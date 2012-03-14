@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120313124320) do
+ActiveRecord::Schema.define(:version => 20120314155822) do
 
   create_table "photos", :force => true do |t|
     t.integer  "shoot_id"
@@ -51,5 +51,13 @@ ActiveRecord::Schema.define(:version => 20120313124320) do
   end
 
   add_index "tags", ["shoot_id"], :name => "index_tags_on_shoot_id"
+
+  create_table "users", :force => true do |t|
+    t.string   "email"
+    t.string   "password_hash"
+    t.string   "password_salt"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
 
 end

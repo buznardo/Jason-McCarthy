@@ -4,9 +4,15 @@ Jason::Application.routes.draw do
     resources :photos
   end
   
+  resources :users
+  resources :sessions
   resources :tags
 
-  match '/info',   :to => 'pages#info'
+  match '/info', :to => 'pages#info'
+  
+  match '/loginsecretlocation', :to => 'sessions#new'
+  match '/logout', :to => 'sessions#destroy'
+  match '/signupsecretlocation', :to => 'users#new'
   
   root :to => 'pages#home'
   

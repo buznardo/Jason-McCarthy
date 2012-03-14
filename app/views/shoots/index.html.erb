@@ -1,10 +1,22 @@
+<% content_for :filters do %>
+	<ul class="filters">
+		<li><%= nav_link "All", shoots_path %></li>
+		<li><%= nav_link "Fashion", shoots_path(tag_name: "Fashion") %></li>
+		<li><%= nav_link "Portrait", shoots_path(tag_name: "Portrait") %></li>
+		<li><%= nav_link "Landscape", shoots_path(tag_name: "Landscape") %></li>
+		<li><%= nav_link "Wedding", shoots_path(tag_name: "Wedding") %></li>
+	</ul>
+<% end %>
+
 <div class="container">
 	<ul class="thumbs">
 		<% @shoots.each do |shoot| %>
 			<li>
 				<%= link_to image_tag(shoot.thumb.url), shoot %>
-				<%#= link_to 'Edit', edit_shoot_path(shoot), :class => "btn btn-small btn-primary" %>
-				<%#= link_to 'X', shoot, confirm: 'Are you sure?', method: :delete, :class => "btn btn-small btn-primary" %>
+				<% if current_user %>
+					<%= link_to 'Edit', edit_shoot_path(shoot), :class => "btn btn-small btn-primary" %>
+					<%= link_to 'X', shoot, confirm: 'Are you sure?', method: :delete, :class => "btn btn-small btn-primary" %>
+				<% end %>
 			</li>
 		<% end %>
 	</ul>

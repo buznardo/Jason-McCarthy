@@ -1,0 +1,16 @@
+<div class="container">
+	<div class="content">
+		<h1>Log in</h1>
+
+		<%= form_tag sessions_path do %>
+  		<div class="field">
+    		<%= text_field_tag :email, params[:email], :placeholder => "Email address", :title => "Type your email address" %>
+  		</div>
+  		<div class="field">
+    		<%= password_field_tag :password %>
+  		</div>
+  
+  		<%= submit_tag "Log in", class: "btn btn-big btn-primary" %>
+		<% end %>
+	</div>
+</div>

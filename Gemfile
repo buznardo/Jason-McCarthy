@@ -39,3 +39,4 @@ gem 'jquery-rails'
 
 gem "paperclip", "~> 2.7"
 # gem 'paperclip', :git => 'git://github.com/thoughtbot/paperclip.git', :branch => 'rails3'
+gem 'bcrypt-ruby', :require => 'bcrypt'

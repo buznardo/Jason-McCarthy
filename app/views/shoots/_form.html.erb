@@ -20,7 +20,7 @@
 	<%= f.file_field :thumb %>
   </div>
   <div class="field">
-  	<%= f.text_field :tag_names, :placeholder => "Category name", :title => "Type category name" %>
+  	<%= f.collection_select :tag_names, Tag.find(:all), :id, :name %>
   </div>
   <%= f.submit "Create Shoot", :class => "fl btn btn-large btn-primary" %>
   <%= link_to "cancel", shoots_path %>
