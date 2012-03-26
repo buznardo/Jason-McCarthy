@@ -2,7 +2,7 @@
 
 <% content_for :filters do %>
 	<ul class="filters">
-		<%= nav_link "All", shoots_path %>
+		<%= all_nav_link %>
     <% @tags.each do |tag| -%>
       <%= nav_link tag.name, shoots_path(tag_name: tag.name) %>
     <% end -%>

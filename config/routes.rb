@@ -7,14 +7,18 @@ Jason::Application.routes.draw do
   # not nested underneath shoots.
   resources :photos, only: :destroy
   
-  resources :users
+  resources :users, only: [:new, :create]
   resources :sessions
 
   match '/info', :to => 'pages#info'
   
-  match '/loginsecretlocation', :to => 'sessions#new'
-  match '/logout', :to => 'sessions#destroy'
-  match '/signupsecretlocation', :to => 'users#new'
+  get '/loginsecretlocation' => 'sessions#new'
+  delete '/logout' => 'sessions#destroy'
+  get '/signupsecretlocation' => 'users#new'
+
+  # This will make a path called 'portfolio_path' which will
+  # bring the user to the shoots index action.
+  get '/portfolio' => 'shoots#index', as: :portfolio
   
   root :to => 'pages#home'
   
