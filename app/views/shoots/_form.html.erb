@@ -1,4 +1,3 @@
-<% @shoot.tags.build %>
 <%= form_for @shoot, :html => { :multipart => true } do |f| %>
   <% if @shoot.errors.any? %>
     <div id="error_explanation">
@@ -11,7 +10,8 @@
   <% end %>
 
   <div class="field">
-    <%= f.text_field :title, :placeholder => "Shoot Title", :title => "Type shoot title" %>
+    <%= f.text_field :title, :placeholder => "Shoot Title",
+      :title => "Type shoot title", :autofocus => 'autofocus' %>
   </div>
   <div class="field">
     <%= f.text_area :description, :placeholder => "Shoot Description", :title => "Type shoot description" %>
@@ -20,7 +20,7 @@
 	<%= f.file_field :thumb %>
   </div>
   <div class="field">
-  	<%= f.collection_select :tag_names, Tag.find(:all), :id, :name %>
+  	<%= f.collection_select :tag_id, Tag.all, :id, :name %>
   </div>
   <%= f.submit "Create Shoot", :class => "fl btn btn-large btn-primary" %>
   <%= link_to "cancel", shoots_path %>

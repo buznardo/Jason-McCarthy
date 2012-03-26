@@ -7,6 +7,9 @@ class ShootsController < ApplicationController
     else
       @shoots = Shoot.all
     end
+    # Need this so that we can interator over it and display
+    # a link for each tag.
+    @tags = Tag.all
   end
 
   def show

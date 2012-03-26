@@ -1,5 +1,5 @@
 class Shoot < ActiveRecord::Base
-  attr_accessible :title, :thumb, :description, :tag_names
+  attr_accessible :title, :thumb, :description, :tag_id
   
   validates :title, :presence => true,
                     :length => { :maximum => 40 }
@@ -15,23 +15,5 @@ class Shoot < ActiveRecord::Base
   validates_attachment_content_type :thumb, :content_type => ['image/jpeg', 'image/png']
   
   has_many :photos, :dependent => :destroy
-  has_many :taggings, :dependent => :destroy
-  has_many :tags, :through => :taggings
-  
-  attr_writer :tag_names
-  after_save :assign_tags
-  
-  def tag_names
-    @tag_names || tags.map(&:name).join(' ')
-  end
-  
-  private
-  
-  def assign_tags
-    if @tag_names
-      self.tags = @tag_names.split(/\s+/).map do |name|
-        Tag.find_or_create_by_name(name)
-      end
-    end
-  end
+  belongs_to :tag
 end

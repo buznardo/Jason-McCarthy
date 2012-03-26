@@ -1,9 +1,0 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
-
-one:
-  shoot_id: 1
-  tag_id: 1
-
-two:
-  shoot_id: 1
-  tag_id: 1
