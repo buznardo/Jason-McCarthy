@@ -1,12 +1,14 @@
 Jason::Application.routes.draw do
   
   resources :shoots do
-    resources :photos
+    resources :photos, only: :create
   end
+  # Need a seperate route for destroying photos which is
+  # not nested underneath shoots.
+  resources :photos, only: :destroy
   
   resources :users
   resources :sessions
-  resources :tags
 
   match '/info', :to => 'pages#info'
   

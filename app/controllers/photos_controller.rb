@@ -10,7 +10,7 @@ class PhotosController < ApplicationController
     @photo.destroy
     
     respond_to do |format|
-      format.html { redirect_to shoots_url }
+      format.html { redirect_to shoot_path(@photo.shoot) }
       format.json { head :no_content }
     end
   end
