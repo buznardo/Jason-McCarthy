@@ -1,7 +1,11 @@
 <% provide(:title, 'Fashion Photographer, Wedding Photographer') %>
 
 <div id="randoms">
-	<img class="bg" src="images/home-1.png" alt="Hot elegant woman" />
+  <% if @random_photo %>
+    <%= image_tag @random_photo.pic.url %>
+  <% else %>
+    <img class="bg" src="images/home-1.png" alt="Hot elegant woman" />
+  <% end %>
 </div>
 
 <span id="tagline">Endeavouring to build a creative &amp; inspiring world</span>
