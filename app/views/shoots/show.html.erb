@@ -14,10 +14,13 @@
       <% end %>
     </ul>
   </div>
-  <div class="controls">
-    <a href="#" class="prev-page">Prev</a>
-    <a href="#" class="next-page">Next</a>
-  </div>
+
+  <% if @shoot.photos.any? %>
+    <div class="controls">
+      <a href="#" class="prev-page">Prev</a>
+      <a href="#" class="next-page">Next</a>
+    </div>
+  <% end %>
     
   <% if current_user %>
     <%= form_for([@shoot, Photo.new]) do |f| %>
