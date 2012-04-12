@@ -22,7 +22,9 @@ $light: #eaeaea;
 // universal
 
 * { margin:0; padding:0; }
-html,body,input,textarea,button { font-family:"Helvetica Neue",helvetica,arial,sans-serif; color:$black;  }
+html,body,input,textarea,button { 
+  font-family:"Helvetica Neue", helvetica,arial,sans-serif; color:$black;
+}
 
 .container { width:96%; margin:0 auto; padding:70px 0 0 0; }
 .inner { width:96%; margin:0 auto; }
@@ -168,19 +170,18 @@ header {
 }
 
 
-
-
 // Slide
+/* Necessary CSS */
+// .slider    { overflow:hidden; position:relative; }
+// .slider ul { margin:0; padding:0; }
+// .slider li { float:left; margin:0 5px 0 0; list-style:none; }
+// /* IE6 issues */
+// .slider ul { width:100%; }
 
-#timeline {
-	overflow: auto;
-	cursor: -moz-grab !important;
-}
-
-.slide {
-	float:left;
-	width:11000px;
-	overflow:auto;
+.slider {
+  position:relative; 
+  overflow: hidden;
+  ul { width:100%; }
 	padding-left:2%;
 	li {
 		float:left;

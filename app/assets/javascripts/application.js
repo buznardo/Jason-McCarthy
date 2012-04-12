@@ -12,4 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require lemmon-slider.js
 //= require_tree .
+
+
+$(function() {
+  $('#slider').lemmonSlider({
+  });
+});
