@@ -5,8 +5,6 @@ gem 'rails', '3.2.1'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
-
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -23,12 +21,17 @@ end
 gem 'jquery-rails'
 
 group :development, :test do
+  gem 'sqlite3'
   gem 'rspec-rails'
 end
 
 group :test do
   gem 'factory_girl_rails'
   gem 'shoulda-matchers'
+end
+
+group :production do
+  gem 'pg'
 end
 
 # To use ActiveModel has_secure_password
@@ -46,6 +49,5 @@ end
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
-gem "paperclip", "~> 2.7"
-# gem 'paperclip', :git => 'git://github.com/thoughtbot/paperclip.git', :branch => 'rails3'
+gem "paperclip", "~> 3.0"
 gem 'bcrypt-ruby', :require => 'bcrypt'
