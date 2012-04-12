@@ -1,10 +1,11 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.1'
+gem 'rails', '3.2.3'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
+gem 'aws-sdk', '~> 1.3.4'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -23,6 +24,7 @@ gem 'jquery-rails'
 group :development, :test do
   gem 'sqlite3'
   gem 'rspec-rails'
+  gem 'sqlite3'
 end
 
 group :test do
@@ -35,7 +37,7 @@ group :production do
 end
 
 # To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'bcrypt-ruby', '~> 3.0.0'
 
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
@@ -50,4 +52,3 @@ end
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
 gem "paperclip", "~> 3.0"
-gem 'bcrypt-ruby', :require => 'bcrypt'

@@ -15,7 +15,7 @@ module ApplicationHelper
 
   def build_nav_li(link_text, link_path, class_name='')
     content_tag(:li, :class => class_name) do
-      link_to link_text, link_path
+      link_to link_text, link_path, remote: true, class: "hello"
     end
   end
 end

@@ -1,0 +1,11 @@
+<% @shoots.each do |shoot| %>
+  <li>
+    <%= link_to image_tag(shoot.thumb.url), shoot %>
+    <% if current_user %>
+      <%= link_to 'Edit', edit_shoot_path(shoot),
+        :class => "btn btn-small btn-primary" %>
+      <%= link_to 'X', shoot, confirm: 'Are you sure?', 
+        method: :delete, :class => "btn btn-small btn-primary" %>
+    <% end %>
+  </li>
+<% end %>
