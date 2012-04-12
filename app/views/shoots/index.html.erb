@@ -2,26 +2,13 @@
 
 <% content_for :filters do %>
 	<ul class="filters">
-		<%= all_nav_link %>
-    <% @tags.each do |tag| -%>
-      <%= nav_link tag.name, shoots_path(tag_name: tag.name) %>
-    <% end -%>
+    <%= render 'shoots/filters' %>
 	</ul>
 <% end %>
 
 <div class="container">
 	<ul class="thumbs">
-		<% @shoots.each do |shoot| %>
-			<li>
-				<%= link_to image_tag(shoot.thumb.url), shoot %>
-				<% if current_user %>
-          <%= link_to 'Edit', edit_shoot_path(shoot),
-            :class => "btn btn-small btn-primary" %>
-          <%= link_to 'X', shoot, confirm: 'Are you sure?', 
-            method: :delete, :class => "btn btn-small btn-primary" %>
-				<% end %>
-			</li>
-		<% end %>
+    <%= render 'shoots/shoot_li' %>
 	</ul>
 	
 	<% if current_user %>

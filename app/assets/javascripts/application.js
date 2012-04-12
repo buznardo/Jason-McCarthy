@@ -20,3 +20,7 @@ $(function() {
   $('#slider').lemmonSlider({
   });
 });
+
+$('.hello').bind("ajax:before", function() {
+  $('ul.thumbs').html("loading");
+});
