@@ -6,10 +6,10 @@
       <% @shoot.photos.each do |photo| %>
         <li>
           <%= image_tag photo.pic.url %>
-          <%# if current_user %>
-            <%# link_to 'X', photo, confirm: 'Are you sure?', 
+          <% if current_user %>
+            <% link_to 'X', photo, confirm: 'Are you sure?', 
               method: :delete, :class => "btn btn-small btn-primary" %>
-          <%# end %>
+          <% end %>
         </li>
       <% end %>
     </ul>
@@ -24,10 +24,10 @@
     
   <% if current_user %>
     <%= form_for([@shoot, Photo.new]) do |f| %>
-        <div class="field">
+      <div class="field">
         <%= f.file_field :pic %>
-        </div>
-        <%= f.submit class: "btn btn-large btn-primary" %>
+      </div>
+      <%= f.submit class: "btn btn-large btn-primary" %>
     <% end %>
   <% end %>
   
