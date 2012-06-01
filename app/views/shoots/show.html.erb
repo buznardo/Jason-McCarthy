@@ -14,15 +14,15 @@
       <% end %>
     </ul>
   </div>
-
-  	<% if current_user %>
-	    <%= form_for([@shoot, Photo.new]) do |f| %>
-	        <div class="field">
-	        	<%= f.file_field :pic %>
-	        </div>
-	        <%= f.submit class: "btn btn-large btn-primary" %>
-	    <% end %>
-	  <% end %>
+    
+  <% if current_user %>
+    <%= form_for([@shoot, Photo.new]) do |f| %>
+      <div class="field">
+        <%= f.file_field :pic %>
+      </div>
+      <%= f.submit class: "btn btn-large btn-primary" %>
+    <% end %>
+  <% end %>
   
   <div class="info">
     <h1><%= @shoot.title %></h1>

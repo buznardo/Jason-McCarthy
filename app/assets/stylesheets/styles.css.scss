@@ -172,6 +172,7 @@ header {
 
 // Slide
 /* Necessary CSS */
+// INFO: http://jquery.lemmonjuice.com/plugins/slider-variable-widths.php
 // .slider    { overflow:hidden; position:relative; }
 // .slider ul { margin:0; padding:0; }
 // .slider li { float:left; margin:0 5px 0 0; list-style:none; }
@@ -181,7 +182,7 @@ header {
 .slider {
   position:relative; 
   overflow: hidden;
-  ul { width:100%; }
+  ul { width:100%; margin: 0; padding: 0; }
 	padding-left:2%;
 	li {
 		float:left;
