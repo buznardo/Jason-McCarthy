@@ -18,4 +18,9 @@ module ApplicationHelper
       link_to link_text, link_path, remote: true, class: "hello"
     end
   end
+  
+  def landing_photo
+      random = Random.rand(1..3)
+      image_tag "home-#{random}.png", {:class => 'bg'}
+  end
 end

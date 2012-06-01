@@ -14,13 +14,3 @@
 //= require jquery_ujs
 //= require lemmon-slider.js
 //= require_tree .
-
-
-$(function() {
-  $('#slider').lemmonSlider({
-  });
-});
-
-$('.hello').bind("ajax:before", function() {
-  $('ul.thumbs').html("loading");
-});

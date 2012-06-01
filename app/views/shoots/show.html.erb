@@ -6,33 +6,33 @@
       <% @shoot.photos.each do |photo| %>
         <li>
           <%= image_tag photo.pic.url %>
-          <%# if current_user %>
-            <%# link_to 'X', photo, confirm: 'Are you sure?', 
+          <% if current_user %>
+            <% link_to 'X', photo, confirm: 'Are you sure?', 
               method: :delete, :class => "btn btn-small btn-primary" %>
-          <%# end %>
+          <% end %>
         </li>
       <% end %>
     </ul>
   </div>
 
-  <% if @shoot.photos.any? %>
-    <div class="controls">
-      <a href="#" class="prev-page">Prev</a>
-      <a href="#" class="next-page">Next</a>
-    </div>
-  <% end %>
-    
-  <% if current_user %>
-    <%= form_for([@shoot, Photo.new]) do |f| %>
-        <div class="field">
-        <%= f.file_field :pic %>
-        </div>
-        <%= f.submit class: "btn btn-large btn-primary" %>
-    <% end %>
-  <% end %>
+  	<% if current_user %>
+	    <%= form_for([@shoot, Photo.new]) do |f| %>
+	        <div class="field">
+	        	<%= f.file_field :pic %>
+	        </div>
+	        <%= f.submit class: "btn btn-large btn-primary" %>
+	    <% end %>
+	  <% end %>
   
   <div class="info">
     <h1><%= @shoot.title %></h1>
     <p><%= @shoot.description %></p>
+
+	<% if @shoot.photos.any? %>
+	    <div class="controls">
+	      <a href="#" class="prev-page">Prev</a>
+	      <a href="#" class="next-page">Next</a>
+	    </div>
+	  <% end %>
   </div>
 </div>

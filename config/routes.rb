@@ -12,9 +12,8 @@ Jason::Application.routes.draw do
 
   match '/info', :to => 'pages#info'
   
-  get '/loginsecretlocation' => 'sessions#new'
+  get '/login' => 'sessions#new'
   delete '/logout' => 'sessions#destroy'
-  get '/signupsecretlocation' => 'users#new'
 
   # This will make a path called 'portfolio_path' which will
   # bring the user to the shoots index action.
