@@ -14,7 +14,14 @@
       <% end %>
     </ul>
   </div>
-    
+  
+	<% if @shoot.photos.any? %>
+	    <div class="controls">
+	      <a href="#" class="prev-page">Prev</a>
+	      <a href="#" class="next-page">Next</a>
+	    </div>
+	<% end %>
+	
   <% if current_user %>
     <%= form_for([@shoot, Photo.new]) do |f| %>
       <div class="field">
@@ -23,16 +30,4 @@
       <%= f.submit class: "btn btn-large btn-primary" %>
     <% end %>
   <% end %>
-  
-  <div class="info">
-    <h1><%= @shoot.title %></h1>
-    <p><%= @shoot.description %></p>
-
-	<% if @shoot.photos.any? %>
-	    <div class="controls">
-	      <a href="#" class="prev-page">Prev</a>
-	      <a href="#" class="next-page">Next</a>
-	    </div>
-	  <% end %>
-  </div>
 </div>

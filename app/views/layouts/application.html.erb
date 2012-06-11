@@ -2,13 +2,18 @@
 <html>
   <head>
     <title><%= yield(:title) %> | Jason McCarthy</title>
-    <%= stylesheet_link_tag    "application", :media => "all" %>
-    <script type="text/javascript" src="http://use.typekit.com/ghw8nkj.js"></script>
-    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	
     <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+
+	<%= stylesheet_link_tag    "application", :media => "all" %>
     <%= csrf_meta_tags %>
+
+	<script type="text/javascript" src="http://use.typekit.com/fbq0usz.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
   </head>
   <body>
     <% flash.each do |key, value| %>
