@@ -1,9 +1,9 @@
 class Photo < ActiveRecord::Base
   attr_accessible :photo, :pic
   
-  has_attached_file :pic,
-                    :url  => "/assets/photos/:id/:style/:basename.:extension",
-                    :path => ":rails_root/public/assets/photos/:id/:style/:basename.:extension"
+  has_attached_file :pic, {
+    :path => "/photos/:id/:style/:basename.:extension"
+  }.merge(S3_SETTINGS)
 
   validates_attachment_presence :pic
   validates_attachment_size :pic, :less_than => 1.megabytes

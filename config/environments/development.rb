@@ -34,4 +34,13 @@ Jason::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  S3_SETTINGS = {
+    :bucket => 'jason-mccarthy-dev',
+    :storage => :s3,
+    :s3_credentials => {
+      :access_key_id => 'AKIAJXKXYPT57FP27XQA',
+      :secret_access_key => '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'
+    }
+  }
 end

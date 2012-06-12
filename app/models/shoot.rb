@@ -6,9 +6,9 @@ class Shoot < ActiveRecord::Base
                     
   validates :description, :length => { :maximum => 120 }
   
-  has_attached_file :thumb,
-                    :url  => "/assets/shoots/:id/:style/:basename.:extension",
-                    :path => ":rails_root/public/assets/shoots/:id/:style/:basename.:extension"
+  has_attached_file :thumb, {
+    :path => "/shoots/:id/:style/:basename.:extension"
+  }.merge(S3_SETTINGS)
 
   validates_attachment_presence :thumb
   validates_attachment_size :thumb, :less_than => 0.3.megabytes
