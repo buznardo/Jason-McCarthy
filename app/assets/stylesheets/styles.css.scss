@@ -245,6 +245,8 @@ header {
 .controls {
 	 a, a:visited {
 		display:block;
+		background-image:url(arrows.png);
+		background-position:center;
 		background:#444;
 		float:left;
 		margin-right:3px;
