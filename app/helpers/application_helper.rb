@@ -20,7 +20,7 @@ module ApplicationHelper
   end
   
   def landing_photo
-      random = Random.rand(1..3)
-      image_tag "home-#{random}.png", {:class => 'bg'}
+    random = Random.rand(1..3)
+    image_tag "home-#{random}.png", {:class => 'bg'}
   end
 end
