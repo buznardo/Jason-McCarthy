@@ -7,3 +7,8 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 User.create :email => "jasonexpressing@gmail.com", :password => "expressive120;"
+
+Tag.create :name => "Fashion"
+Tag.create :name => "Portrait"
+Tag.create :name => "Landscape"
+Tag.create :name => "Wedding"
