@@ -93,12 +93,14 @@ header {
 	z-index:10;
 	@include box-sizing;
 	.logo {
-		font-size:1em;
+		width:120px;
+		height:18px;
+		background-image:url(jasonmcarthy-logo.jpg);
+		background-repeat:no-repeat;
 		float:left;
 		padding-right:20px;
 		border-right:1px solid $black;
-		font-weight:bold;
-		letter-spacing:-1px;
+		text-indent:-9999em;
 	}
 	nav {
 		float:left;
@@ -178,6 +180,7 @@ header {
 
 .filters {
 	float:right;
+	padding-top:1px;
 	li {
 		position:relative;
 		margin:0 0 0 15px;
@@ -242,6 +245,8 @@ header {
 .controls {
 	 a, a:visited {
 		display:block;
+		background-image:url(arrows.png);
+		background-position:center;
 		background:#444;
 		float:left;
 		margin-right:3px;
