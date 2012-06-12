@@ -179,27 +179,30 @@ header {
 .filters {
 	float:right;
 	li {
+		position:relative;
 		margin:0 0 0 15px;
 	}
 	.current {
-		background-image:url(../images/pointer.png);
-		background-repeat:no-repeat;
-		background-position:center 10px;
 		a {
+			position:relative;
+			background-repeat:no-repeat;
+			background-position:center 14px;
 			color:#444;
+			z-index:100;
 		}
 	}
 }
+.arrow {
+	position:absolute;
+	width: 0;
+	height: 0;
+	left:65px;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-top: 15px solid #eee;
+}
 
 
-// Slide
-/* Necessary CSS */
-// INFO: http://jquery.lemmonjuice.com/plugins/slider-variable-widths.php
-// .slider    { overflow:hidden; position:relative; }
-// .slider ul { margin:0; padding:0; }
-// .slider li { float:left; margin:0 5px 0 0; list-style:none; }
-// /* IE6 issues */
-// .slider ul { width:100%; }
 
 .slider {
   position:relative; 
