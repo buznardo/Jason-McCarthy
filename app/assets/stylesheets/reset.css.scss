@@ -8,8 +8,8 @@ audio:not([controls]) { display: none; }
 html { font-size: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; overflow-y:scroll; }
 body { margin: 0; font-size: 0.9em; line-height: 1; }
 
-::-moz-selection { background: #fe57a1; color: #fff; text-shadow: none; }
-::selection { background: #fe57a1; color: #fff; text-shadow: none; }
+::-moz-selection { background: #444; color: #fff; text-shadow: none; }
+::selection { background: #444; color: #fff; text-shadow: none; }
 
 a { text-decoration:none; }
 a:focus { outline: thin dotted; }

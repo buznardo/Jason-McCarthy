@@ -50,10 +50,7 @@ class ShootsController < ApplicationController
   def destroy
     @shoot = Shoot.find(params[:id])
     @shoot.destroy
-
-    respond_to do |format|
-      format.html { redirect_to shoots_url }
-      format.json { head :no_content }
-    end
+    flash[:success] = "Shoot   successfully deleted!"
+    redirect_to shoots_url
   end
 end
