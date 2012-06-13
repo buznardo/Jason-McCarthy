@@ -17,7 +17,7 @@ Jason::Application.routes.draw do
 
   # This will make a path called 'portfolio_path' which will
   # bring the user to the shoots index action.
-  get '/portfolio' => 'shoots#index', as: :portfolio
+  get '/work' => 'shoots#index', as: :portfolio
   
   root :to => 'pages#home'
   
