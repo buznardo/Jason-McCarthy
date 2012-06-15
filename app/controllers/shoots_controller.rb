@@ -5,7 +5,7 @@ class ShootsController < ApplicationController
       @tag = Tag.find_by_name(params[:tag_name])
       @shoots = @tag.shoots.all
     else
-      @shoots = Shoot.all
+      @shoots = Shoot.all(:order => "created_at DESC")
     end
     # Need this so that we can interator over it and display
     # a link for each tag.
