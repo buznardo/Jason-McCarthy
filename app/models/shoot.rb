@@ -11,7 +11,7 @@ class Shoot < ActiveRecord::Base
   }.merge(S3_SETTINGS)
 
   validates_attachment_presence :thumb
-  validates_attachment_size :thumb, :less_than => 0.3.megabytes
+  validates_attachment_size :thumb, :less_than => 0.03.megabytes
   validates_attachment_content_type :thumb, :content_type => ['image/jpeg', 'image/png']
   
   has_many :photos, :dependent => :destroy

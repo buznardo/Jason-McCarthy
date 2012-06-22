@@ -2,7 +2,7 @@
 
 <div class="container">
   <div id="slider" class="slider">
-    <ul>
+    <ul style="min-width:2000px">
       <% @shoot.photos.each do |photo| %>
         <li>
           <%= image_tag photo.pic.url %>
