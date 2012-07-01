@@ -20,7 +20,7 @@ module ApplicationHelper
   end
   
   def landing_photo
-    random = Random.rand(1..4)
+    random = (1..4).to_a.sample
     image_tag "home-#{random}.png", {:class => 'bg'}
   end
 end
