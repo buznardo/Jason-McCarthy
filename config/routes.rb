@@ -19,6 +19,6 @@ Jason::Application.routes.draw do
   # bring the user to the shoots index action.
   get '/work' => 'shoots#index', as: :portfolio
   
-  root :to => 'pages#home'
+  root :to => 'shoots#index'
   
 end

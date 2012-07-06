@@ -21,7 +21,10 @@ $light: #eaeaea;
 	-webkit-transition: all 0.2s;
 	-o-transition: all 0.2s;
 }
-
+@mixin font {
+	font-family:"Proxima-Nova","HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight:300;
+}
 
 
 
@@ -29,7 +32,7 @@ $light: #eaeaea;
 
 * { margin:0; padding:0; }
 html,body,input,textarea,button { 
-  font-family:"Helvetica Neue", helvetica,arial,sans-serif; color:$black;
+  @include font; color:$black;
 }
 
 .container { width:96%; margin:0 auto; padding:6% 0 0 0; }
@@ -93,8 +96,8 @@ header {
 	z-index:10;
 	@include box-sizing;
 	.logo {
-		width:120px;
-		height:18px;
+		width:122px;
+		height:19px;
 		background-image:url(jasonmcarthy-logo.jpg);
 		background-repeat:no-repeat;
 		float:left;
@@ -104,14 +107,13 @@ header {
 	}
 	nav {
 		float:left;
+		padding-top:1px;
 	}
 	li {
 		float:left;
 		margin-left:15px;
 		line-height:1;
 		a, a:visited {
-			font-family:"Proxima-Nova","HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
-			font-weight:300;
 			font-size:1em;
 			text-transform:uppercase;
 			color:$gray;
@@ -180,7 +182,7 @@ header {
 
 .filters {
 	float:right;
-	padding-top:1px;
+	padding-top:3px;
 	li {
 		position:relative;
 		margin:0 0 0 15px;
@@ -208,7 +210,7 @@ header {
 
 
 .slider {
-  position:relative; 
+  position:relative;
   overflow: hidden;
   margin-bottom:20px;
   ul { width:100%; margin: 0; padding: 0; }
