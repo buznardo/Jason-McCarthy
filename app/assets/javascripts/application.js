@@ -2,6 +2,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require lemmon-slider.js
+//= require script.js
 //= require queries.js
 // require_tree .
 
