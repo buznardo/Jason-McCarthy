@@ -3,7 +3,20 @@
 		<nav>
 			<ul class="main_nav">
 				<li><%= link_to "Work", portfolio_path %></li>
-				<li><%= link_to "Info", info_path %></li>
+				<li><a class='activate_modal' name='first_window' href='#'>Info</a></li>
+
+				<div id='mask' class='close_modal'></div>
+
+				<div id='first_window' class='modal_window'>
+					<%= image_tag('jason-mccarthy.jpg') %>
+					<strong>Endeavouring to build a creative &amp; inspiring 2D world</strong>
+					<span data-icon="W">086 251 1714</span>
+					<span data-icon="R">contact@jasonmccarthy.ie</span>
+					<a href="http://jasonmccarthy.tumblr.com/" data-icon="Q" target="_blank">Personal Blog</a>
+					<a href="https://www.facebook.com/pages/Jason-Mc-Carthy-Photography/224890427553660" data-icon="T" target="_blank">Facebook</a>
+					<a href="https://twitter.com/jason_mc_carthy" data-icon="E" target="_blank">Twitter</a>
+				</div>
+				
 				<% if current_user %>
           <li><%= link_to "Log out", logout_path, method: :delete %></li>
 				<% end %>
