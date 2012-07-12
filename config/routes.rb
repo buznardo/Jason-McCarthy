@@ -20,5 +20,4 @@ Jason::Application.routes.draw do
   get '/work' => 'shoots#index', as: :portfolio
   
   root :to => 'shoots#index'
-  
 end

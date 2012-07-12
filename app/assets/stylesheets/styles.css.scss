@@ -35,7 +35,7 @@ html,body,input,textarea,button {
   @include font; color:$black;
 }
 
-.container { width:96%; margin:0 auto; padding:6% 0 0 0; }
+.container { width:96%; margin:0 auto; padding:2% 0 0 0; }
 .inner { width:96%; margin:0 auto; }
 .content { max-width:550px; width:96%; float:left; margin:0 2%; }
 aside { max-width:300px; width:26%; float:left; }
@@ -148,7 +148,6 @@ header {
 	background-color:#fff;
 	width:100%;
 	padding:1.5% 2%;
-	border-bottom:1px solid $light;
 	overflow:hidden;
 	z-index:10;
 	@include box-sizing;
@@ -414,7 +413,7 @@ select {
 @media only screen
 and (max-width : 321px) {
 	.container {
-		padding:13% 0 0 0 !important;
+		padding:0 0 0 0 !important;
 	}
 	header {
 		padding:3%;
@@ -437,7 +436,7 @@ and (min-width : 321px)
 and (max-width : 480px) {
 	.container {
 		width:94%;
-		padding:11% 0 0 0;
+		padding:0 0 0 0;
 	}
 	header {
 		padding:2.5% 3%;
@@ -458,7 +457,7 @@ and (max-width : 600px) {
 	.filters, .controls { display:none; }
 	.container {
 		width:94%;
-		padding:11% 0 0 0;
+		padding:0 0 0 0;
 	}
 	header {
 		padding:2.5% 3%;
@@ -485,7 +484,7 @@ and (max-width : 600px) {
 and (min-width : 600px) {
 	.container {
 		width:95%;
-		padding:9.5% 0 0 0;
+		padding:0 0 0 0;
 	}
 	header {
 		padding:2.5% 2.5%;
@@ -511,7 +510,7 @@ and (min-width : 600px) {
 and (min-width : 1024px) {
 	.container {
 		width:96%;
-		padding:6% 0 0 0;
+		padding:0 0 0 0;
 	}
 	header {
 		padding:1.5% 2%;
@@ -537,7 +536,7 @@ and (min-width : 1024px) {
 and (min-width : 1400px) {
 	.container {
 		width:98%;
-		padding:4% 0 0 0;
+		padding:2% 0 0 0;
 	}
 	header {
 		padding:1%;
@@ -564,7 +563,7 @@ and (min-width : 1400px) {
 @media only screen
 and (min-width : 2100px) {
 	.container {
-		padding:3.25% 0 0 0;
+		padding:2% 0 0 0;
 	}
 	header {
 		padding:0.75% 1%;
