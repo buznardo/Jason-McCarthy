@@ -20,6 +20,8 @@
 	<%= csrf_meta_tags %>
   </head>
   <body>
+    <!--[if lt IE 8]><p class=chromeframe>Your internet browser is very old. Please <a href="http://browsehappy.com/">upgrade to a modern internet browser</a> to experience this website.</p><![endif]-->
+    
     <% flash.each do |key, value| %>
       <div class="alert alert-<%= key %>"><%= value %></div>
     <% end %>

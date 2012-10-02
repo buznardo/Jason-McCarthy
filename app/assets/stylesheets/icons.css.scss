@@ -1,0 +1,9 @@
+[data-icon]:before {
+	font-family: 'Pictos Custom';
+	content: attr(data-icon);
+	-webkit-font-smoothing: antialiased;
+	font-size:35px;
+	float:left;
+	margin:-5px 10px 0 0;
+	border:0;
+}

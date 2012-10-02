@@ -1,33 +1,22 @@
 <% provide(:title, @shoot.title) %>
 
-<div class="container">
-  <div id="slider" class="slider">
-    <ul style="min-width:2000px">
-      <% @shoot.photos.each do |photo| %>
-        <li>
-          <%= image_tag photo.pic.url %>
-          <% if current_user %>
-            <% link_to 'X', photo, confirm: 'Are you sure?', 
-              method: :delete, :class => "btn btn-small btn-primary" %>
-          <% end %>
-        </li>
-      <% end %>
-    </ul>
-  </div>
-  
-	<% if @shoot.photos.any? %>
-	    <div class="controls">
-	      <a href="#" class="prev-page" id="prev">Prev</a>
-	      <a href="#" class="next-page" id="next">Next</a>
-	    </div>
-	<% end %>
-	
-  <% if current_user %>
-    <%= form_for([@shoot, Photo.new]) do |f| %>
-      <div class="field">
-        <%= f.file_field :pic %>
-      </div>
-      <%= f.submit class: "btn btn-large btn-primary" %>
+<ul class="content">
+  <% @shoot.photos.each do |photo| %>
+  <li>
+    <%= image_tag photo.pic.url %>
+    <% if current_user %>
+    <% link_to 'X', photo, confirm: 'Are you sure?', 
+    method: :delete, :class => "btn btn-small btn-primary" %>
     <% end %>
+  </li>
   <% end %>
+</ul>
+
+<% if current_user %>
+<%= form_for([@shoot, Photo.new]) do |f| %>
+<div class="field">
+  <%= f.file_field :pic %>
 </div>
+<%= f.submit class: "btn btn-large btn-primary" %>
+<% end %>
+<% end %>

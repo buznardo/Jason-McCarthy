@@ -1,0 +1,41 @@
+.modal_window, #mask { display:none; }
+
+* { margin:0; padding:0; }
+
+img { width:100%; }
+
+body { padding:$space; }
+
+.container {
+  width:96%;
+  margin:0 auto;
+  padding:2% 0 0 0;
+}
+
+.content {
+  width:100%;
+  max-width:800px;
+  margin:0 auto;
+  li {
+    margin-top:20px;
+    &:first-child {
+      margin-top:0;
+    }
+  }
+}
+
+.grid {
+	margin-left:-$space;
+	li {
+		width:94%;
+		float:left;
+		margin:0 0 $space $space;
+	}
+	img {
+		@include transition;
+		&:hover {
+			@include transparent;
+			cursor:pointer;
+		}
+	}
+}

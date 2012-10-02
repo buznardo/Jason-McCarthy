@@ -1,0 +1,44 @@
+// Smartphones
+@media only screen and (max-width : 622px){
+  .filters { display:none; }
+}
+
+
+// Tablets portrait
+@media only screen and (min-width: 623px){
+  body { padding:$space_mid; }
+  header { padding:0 0 $space_mid 0; }
+  .grid {
+  	margin-left:-$space_mid;
+  	li {
+  		width:29.3333%;
+  		margin:0 0 $space_mid $space_mid;
+  	}
+  }
+}
+
+
+// Tablets landscape
+@media (min-width: 780px) {
+
+}
+
+
+// Laptops
+@media screen and (min-width: 1224px){
+  body { padding:$space_big; }
+  header { padding:0 0 $space_big 0; }
+  .grid {
+  	margin-left:-$space_big;
+  	li {
+  		width:23%;
+  		margin:0 0 $space_big $space_big;
+  	}
+  }
+}
+
+
+// Desktops
+@media screen and (min-width: 1824px){
+
+}

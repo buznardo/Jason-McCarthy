@@ -6,15 +6,13 @@
 	</ul>
 <% end %>
 
-<div class="container">
-	<ul class="thumbs">
-    <%= render 'shoots/shoot_li' %>
-	</ul>
-	
-	<% if current_user %>
-		<div class="content">
-      <%= link_to 'New Shoot', new_shoot_path, 
-        :class => "btn btn-large btn-primary" %>
-		</div>
-	<% end %>
+<ul class="grid">
+  <%= render 'shoots/shoot_li' %>
+</ul>
+
+<% if current_user %>
+<div class="content">
+  <%= link_to 'Upload Shoot', new_shoot_path, 
+  :class => "btn btn-large btn-primary" %>
 </div>
+<% end %>
