@@ -1,41 +1,124 @@
-.modal_window, #mask { display:none; }
-
 * { margin:0; padding:0; }
 
 img { width:100%; }
 
-body { padding:$space; }
-
-.container {
-  width:96%;
-  margin:0 auto;
-  padding:2% 0 0 0;
-}
+body { @include gap; overflow:hidden; }
 
 .content {
   width:100%;
   max-width:800px;
-  margin:0 auto;
+  
   li {
-    margin-top:20px;
-    &:first-child {
-      margin-top:0;
-    }
+   @include gap-top;
+  }
+  
+  li:first-child {
+    margin-top:0;
   }
 }
 
 .grid {
-	margin-left:-$space;
-	li {
-		width:94%;
-		float:left;
-		margin:0 0 $space $space;
-	}
+  @include gap-negative;
+  
+  li {
+    margin-bottom:5%;
+    @include gap-bottom;
+    @include gap-left;
+    
+    @include breakpoint(mini) {
+      float:left;
+      width:45%;
+    }
+    
+    @include breakpoint(tablets_land) {
+      width:30.3333%;
+    }
+    
+    @include breakpoint(laptops) {
+      width:22%;
+    }
+    
+    @include breakpoint(desktops) {
+      width:17%;
+    }
+  }
+  
 	img {
 		@include transition;
+		
 		&:hover {
 			@include transparent;
 			cursor:pointer;
 		}
 	}
+	
+}
+
+.bio, .pane {
+  position:relative;
+  overflow:hidden;
+  @include transition;
+}
+
+.pane {
+  
+  &.show {
+    
+  @include breakpoint(tablets) {
+     left:45%;
+   }
+   
+   @include breakpoint(tablets_land) {
+     left:43%;
+   }
+   
+   @include breakpoint(laptops) {
+      left:28%;
+    }
+  }
+    
+}
+
+.bio {
+  min-height:100%;
+  margin:0 0 5% 0%;
+  @include box-sizing;
+  margin-top:-198px;
+  
+  img {
+    display:none;
+  }
+  
+  &.show {
+   margin-top:0;
+  }
+  
+  @include breakpoint(tablets) {
+    background:$base;
+    margin:0;
+    padding:25px;
+    position:absolute;
+    width:40%;
+    left:-45%;
+    top:0;
+    
+    img { display:block; }
+    
+    &.show {
+     left:0;
+    }
+  }
+  
+  @include breakpoint(laptops) {
+    width:26%;
+  }
+  
+  img {
+    margin-bottom:20px;
+  }
+  
+  p {
+    color:$gray;
+    -webkit-font-smoothing:subpixel-antialiased;
+  }
 }

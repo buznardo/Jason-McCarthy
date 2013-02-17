@@ -11,7 +11,7 @@ User.create :email => "colmtuite@gmail.com", :password => "foobar"
 
 Tag.create :name => "Fashion"
 Tag.create :name => "Portrait"
-Tag.create :name => "Landscape"
+Tag.create :name => "Project"
 
 shoot_1 = Shoot.new title: 'Shoot 1', 
 description: 'The perfect blend between comfort and elegance. Our standard room offers luxury at an affordable price.'

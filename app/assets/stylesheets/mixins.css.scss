@@ -1,6 +1,29 @@
 @mixin font {
-	font-family:"Proxima-Nova","HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family:"Proxima-Nova", "Helvetica Neue", arial, sans-serif;
 	font-weight:300;
+}
+
+// Responsive breakpoints
+@mixin breakpoint($point) {
+  @if $point == mobiles {
+    @media (max-width: 679px) { @content; }
+  }
+  @if $point == mini {
+    @media (min-width: 421px) { @content; }
+  }
+  @if $point == tablets {
+    @media (min-width: 680px) { @content; }
+  }
+  @if $point == tablets_land {
+    @media (min-width: 840px) { @content; }
+  }
+  @else if $point == laptops {
+    @media (min-width: 1120px)  { @content; }
+  }
+  @else if $point == desktops {
+    @media (min-width: 1820px)  { @content; }
+  }
+  
 }
 
 @mixin box-sizing {
@@ -58,4 +81,50 @@
 	-moz-transition: all 0.1s;
 	-webkit-transition: all 0.1s;
 	-o-transition: all 0.1s;
+}
+
+@mixin gap {
+	margin:5%;
+	
+	@include breakpoint(tablets_land) {
+	  margin:3%;
+	}
+}
+
+@mixin gap-bottom {
+  @include breakpoint(mini) {
+	  margin-bottom:5%;
+	}
+	
+	@include breakpoint(tablets_land) {
+	  margin-bottom:3%;
+	}
+}
+
+@mixin gap-left {
+  @include breakpoint(mini) {
+	  margin-left:5%;
+	}
+	
+	@include breakpoint(tablets_land) {
+	  margin-left:3%;
+	}
+}
+
+@mixin gap-top {
+  margin-top:5%;
+	
+	@include breakpoint(tablets_land) {
+	  margin-top:3%;
+	}
+}
+
+@mixin gap-negative {
+  @include breakpoint(mini) {
+   margin-left:-5%;
+  }
+  
+  @include breakpoint(tablets_land) {
+   margin-left:-3%;
+  }
 }

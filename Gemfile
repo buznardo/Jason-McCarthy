@@ -1,12 +1,10 @@
 source 'https://rubygems.org'
-ruby '1.9.3'
 
-gem 'rails', '3.2.3'
-
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
-
+gem 'rails', '3.2.11'
+gem 'jquery-rails'
 gem 'aws-sdk', '~> 1.3.4'
+gem "paperclip", "3.0.4"
+gem 'thin'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -20,10 +18,14 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'jquery-rails'
+group :production do
+  gem 'pg'
+end
 
 group :development, :test do
-  gem 'sqlite3'
+  gem 'foreman'
+  gem 'heroku'
+  gem 'quiet_assets'
   gem 'rspec-rails'
   gem 'sqlite3'
 end
@@ -33,23 +35,5 @@ group :test do
   gem 'shoulda-matchers'
 end
 
-group :production do
-  gem 'pg'
-end
-
 # To use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
-
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
-
-# Use unicorn as the web server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-# gem 'ruby-debug19', :require => 'ruby-debug'
-
-gem "paperclip", "3.0.4"

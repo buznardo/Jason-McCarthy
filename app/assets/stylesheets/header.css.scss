@@ -1,45 +1,70 @@
 header {
-	padding:0 0 $space 0;
 	overflow:hidden;
-	.logo {
-		width:122px;
-		height:19px;
-		background:url(jasonmcarthy-logo.jpg) no-repeat;
-		float:left;
-		padding-right:25px;
-		border-right:1px solid $base;
-		text-indent:-9999px;
-	}
+	@include gap-bottom;
+	
 	nav {
-		float:left;
-		padding-top:1px;
-	}
-	li {
-		float:left;
-		margin-left:20px;
-		line-height:1;
-		a, a:visited {
-			font-size:16px;
-			text-transform:uppercase;
-			color:$gray;
-			@include transition;
-			&:hover {
-				color:$base;
-			}
+		float:right;
+		
+		@include breakpoint(tablets) {
+		  float:left;
 		}
 	}
+		
+	a, a:visited, span {
+	  display:block;
+	  float:left;
+  	margin-left:25px;
+  	line-height:1;
+		font-size:14px;
+		text-transform:uppercase;
+		color:$gray;
+		@include transition;
+		letter-spacing:1px;
+		padding:7px 0 22px 0;
+		cursor:pointer;
+		
+		@include breakpoint(mini) {
+		  padding:0;
+		}
+		
+		&:hover {
+			color:$base;
+		}
+	}
+	
+	.logo {
+		float:left;
+		font-weight:700;
+		color:$base !important;
+		margin-left:0;
+		text-transform:none;
+	}
+
 }
 
 
 .filters {
+  display:none;
 	float:right;
 	padding-top:1px;
-	li {
-		margin:0 0 0 25px;
+	
+	@include breakpoint(tablets) {
+	  display:block;
 	}
+	
+	li {
+	  float:left;
+		margin:0 0 0 25px;
+		
+		a, a:visited {
+		  margin:0;
+		}
+	}
+	
 	.current {
 		a, a:visited {
 			color:$base;
 		}
 	}
+	
 }
