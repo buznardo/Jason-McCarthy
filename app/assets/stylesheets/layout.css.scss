@@ -3,6 +3,7 @@
 img { width:100%; }
 
 body { @include gap; overflow:hidden; }
+.center { text-align:center; }
 
 .content {
   width:100%;
@@ -21,6 +22,7 @@ body { @include gap; overflow:hidden; }
   @include gap-negative;
   
   li {
+    position:relative;
     margin-bottom:5%;
     @include gap-bottom;
     @include gap-left;
@@ -81,9 +83,10 @@ body { @include gap; overflow:hidden; }
 
 .bio {
   min-height:100%;
-  margin:0 0 5% 0%;
+  padding-bottom:5%;
   @include box-sizing;
-  margin-top:-198px;
+  overflow:hidden;
+  margin-top:-86px;
   
   img {
     display:none;
@@ -91,6 +94,28 @@ body { @include gap; overflow:hidden; }
   
   &.show {
    margin-top:0;
+  }
+  
+  img {
+    margin-bottom:20px;
+  }
+  
+  p {
+    display:none;
+    color:$gray;
+    -webkit-font-smoothing:subpixel-antialiased;
+  }
+  
+  a, a:visited {
+    display:inline-block;
+    color:$gray;
+    font-size:24px;
+    margin:20px 25px 20px 0;
+    @include transition;
+    
+    &:hover {
+      color:$base;
+    }
   }
   
   @include breakpoint(tablets) {
@@ -104,6 +129,16 @@ body { @include gap; overflow:hidden; }
     
     img { display:block; }
     
+    p { display:block; }
+    
+    a, a:visited {
+      margin:20px 15px 0 0;
+      
+      &:hover {
+        color:#fff;
+      }
+    }
+    
     &.show {
      left:0;
     }
@@ -112,13 +147,25 @@ body { @include gap; overflow:hidden; }
   @include breakpoint(laptops) {
     width:26%;
   }
-  
-  img {
-    margin-bottom:20px;
-  }
-  
-  p {
-    color:$gray;
-    -webkit-font-smoothing:subpixel-antialiased;
-  }
+}
+
+
+
+
+
+.center-div-con:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -0.25em; /* Adjusts for spacing */
+  font-size: 0;
+}
+
+.center-div {
+  display: inline-block;
+  vertical-align: middle;
+  width: 90%;
+  max-width:400px;
+  font-size: 100%;
 }

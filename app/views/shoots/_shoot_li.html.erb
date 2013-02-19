@@ -3,9 +3,9 @@
     <%= link_to image_tag(shoot.thumb.url), shoot %>
     <% if current_user %>
       <%= link_to 'Edit', edit_shoot_path(shoot),
-        :class => "btn btn-small btn-primary" %>
+        :class => "btn edit btn-small" %>
       <%= link_to 'X', shoot, confirm: 'Are you sure?', 
-        method: :delete, :class => "btn btn-small btn-primary" %>
+        method: :delete, :class => "btn delete btn-small" %>
     <% end %>
   </li>
 <% end %>

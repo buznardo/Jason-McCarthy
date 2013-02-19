@@ -1,16 +1,31 @@
 .btn {
+  display:inline-block;
 	font-weight:normal;
-	width:auto;
+	text-transform:uppercase;
 }
 
 .btn-small {
+  font-family:"Helvetica Neue",arial,sans-serif;
+  position:absolute;
 	font-size:11px;
-	padding:5px 10px;
+	font-weight:600;
+	padding:8px;
+	bottom:8px;
+	background:#fff;
+	@include opacity(0.8);
+	
+	&:hover {
+	  @include opacity(1);
+	}
 }
 
-.btn-large {
-	font-size:12px;
-	padding:10px 20px;
+.delete { right:8px; }
+.edit { right:36px; }
+
+.btn-big {
+	font-size:13px;
+	padding:13px 24px;
+	letter-spacing:1px;
 }
 
 .btn-primary, .btn-primary:visited {
