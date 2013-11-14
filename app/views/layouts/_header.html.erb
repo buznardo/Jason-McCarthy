@@ -3,7 +3,8 @@
 		
 		<nav>
       <%= link_to "Work", portfolio_path %>
-      <span class="bio-trigger">Info</span>
+      <%= link_to "Mail", "mailto:contact@jasonmccarthy.ie", target: "_blank" %>
+      <%= link_to "Blog", "http://jasonmccarthy.tumblr.com", target: "_blank" %>
 				
 			<% if current_user %>
         <%= link_to "Log out", logout_path, method: :delete %>
