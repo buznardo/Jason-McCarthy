@@ -16,7 +16,7 @@ jQuery ->
   MBP.preventZoom()
   
   # Bio trigger
-  $('.bio-trigger').click -> $('.bio, .pane').toggleClass('show')
+  $('.open-slide').click -> $('html').toggleClass('slidey')
   
 # // NOTE: window.load() != $(document).ready()
 # // INFO: http://stackoverflow.com/a/545005/574190
